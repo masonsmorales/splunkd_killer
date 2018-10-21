@@ -8,3 +8,4 @@ while true; do
   for i in $processes; do kill -9 $i; done
   echo "Processes Killed: " $processes
 done
+# Single line version: sudo -u root sh -c "for i in $(ps -ef | egrep '\(splunkd|/opt/splunk/bin/python\)' | grep -v grep | awk '{print $2}'); do kill -9 $i; done"
